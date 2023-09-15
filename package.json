@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "compile": "tsup api/",
-    "dev": "nodemon api/server.ts",
+    "compile": "tsup src/",
+    "dev": "nodemon src/server.ts",
     "stg": "echo \"Error: no test specified\" && exit 1",
     "prod": "echo \"Error: no test specified\" && exit 1"
   },

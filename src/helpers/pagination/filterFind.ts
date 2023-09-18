@@ -1,4 +1,4 @@
-import { ifilterAll } from "../../types/filterAll";
+import { ifilterAll } from "../../types/pagination/filterAll";
 
 export const filterFind = ({
     page,

@@ -1,6 +1,6 @@
-import { User } from "../../../../domain/entities/users/user/user";
-import { MysqlUserRepository } from "../../../../repositories/mysql/users/user/mysql-user-repository";
-import { UserDto } from "../user.dto";
+import { User } from "../../domain/entities/users/user/user";
+import { MysqlUserRepository } from "../../repositories/mysql/users/mysql-user-repository";
+import { UserDto } from "./user.dto";
 
 export class UserUsecase {
   constructor(private readonly userRepository: MysqlUserRepository) {}

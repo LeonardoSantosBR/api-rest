@@ -1,10 +1,10 @@
 import { Request, Response } from "express";
-import { UserUsecase } from "./create-user-usecase";
+import { UserUsecase } from "./user-service";
 
-export class CreateUserController {
+export class UserController {
   constructor(private readonly userUseCase: UserUsecase) {}
 
-  async handle(request: Request, response: Response) {
+  async create(request: Request, response: Response) {
     try {
       const { email, typeUser, name, password, confirmPassword } = request.body;
 
@@ -27,4 +27,6 @@ export class CreateUserController {
       });
     }
   }
+
+
 }

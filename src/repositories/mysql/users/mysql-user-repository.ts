@@ -1,7 +1,7 @@
 import bcrypt from "bcrypt";
 import { PrismaClient } from "@prisma/client";
-import { iUserImplementation } from "../../../../implementations/users/user/user-implementation";
-import { User } from "../../../../domain/entities/users/user/user";
+import { iUserImplementation } from "../../../implementations/users/user-implementation";
+import { User } from "../../../domain/entities/users/user/user";
 
 export class MysqlUserRepository implements iUserImplementation {
   async findByEmail(email: string): Promise<any> {

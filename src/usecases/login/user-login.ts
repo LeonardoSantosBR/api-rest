@@ -1,7 +1,7 @@
 import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
 import { Request, Response } from "express";
-import { MysqlUserRepository } from "../../../../repositories/mysql/users/user/mysql-user-repository";
+import { MysqlUserRepository } from "../../repositories/mysql/users/mysql-user-repository";
 
 export class UserLogin {
   constructor(private readonly userRepository: MysqlUserRepository) {}

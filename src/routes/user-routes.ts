@@ -1,7 +1,6 @@
 import { Router } from "express";
-
-import { userLogin } from "../../../usecases/login/users/user";
-import { createUserController } from "../../../usecases/users/user/create-user";
+import { userLogin } from "../usecases/login";
+import { userController } from "../usecases/users";
 
 
 const userRouter = Router();
@@ -11,7 +10,7 @@ userRouter.post("/login/user", (request, response) => {
 });
 
 userRouter.post("/create/user", (request, response) => {
-  return createUserController.handle(request, response);
+  return userController.create(request, response);
 });
 
 export { userRouter };

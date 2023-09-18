@@ -1,4 +1,4 @@
-import { User } from "../../../domain/entities/users/user/user";
+import { User } from "../../domain/entities/users/user/user";
 
 export interface iUserImplementation {
   findByEmail(email: string): Promise<any>;

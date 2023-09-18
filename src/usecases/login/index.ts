@@ -1,4 +1,4 @@
-import { MysqlUserRepository } from "../../../../repositories/mysql/users/user/mysql-user-repository";
+import { MysqlUserRepository } from "../../repositories/mysql/users/mysql-user-repository";
 import { UserLogin } from "./user-login";
 
 const mysqlUserRepository = new MysqlUserRepository();

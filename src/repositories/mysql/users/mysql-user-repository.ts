@@ -1,7 +1,6 @@
 import bcrypt from "bcrypt";
 import { PrismaClient } from "@prisma/client";
 import { iUserImplementation } from "../../../implementations/users/user-implementation";
-import { User } from "../../../domain/entities/users/user/user";
 
 export class MysqlUserRepository implements iUserImplementation {
   async findByEmail(email: string): Promise<any> {
@@ -14,7 +13,7 @@ export class MysqlUserRepository implements iUserImplementation {
     return findUser;
   }
 
-  async saveUser(user: User): Promise<any> {
+  async create(user: any): Promise<any> {
     const prisma = new PrismaClient();
 
     let hashPassword = await bcrypt.hash(user.password, 5);

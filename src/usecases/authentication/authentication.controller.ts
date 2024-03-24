@@ -3,10 +3,10 @@ import bcrypt from "bcrypt";
 import { Request, Response } from "express";
 import { MysqlUserRepository } from "../../repositories/mysql/users/mysql-user-repository";
 
-export class UserLogin {
+export class AuthenticationController {
   constructor(private readonly userRepository: MysqlUserRepository) {}
 
-  async login(request: Request, response: Response) {
+  async signIn(request: Request, response: Response) {
     try {
       const { email, password } = request.body;
 

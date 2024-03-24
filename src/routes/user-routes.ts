@@ -1,12 +1,12 @@
 import { Router } from "express";
-import { userLogin } from "../usecases/login";
+import { authController } from "../usecases/authentication";
 import { userController } from "../usecases/users";
 
 
 const userRouter = Router();
 
-userRouter.post("/login/user", (request, response) => {
-  return userLogin.login(request, response);
+userRouter.post("/auth/user", (request, response) => {
+  return authController.signIn(request, response);
 });
 
 userRouter.post("/create/user", (request, response) => {

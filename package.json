@@ -7,7 +7,9 @@
     "compile": "tsup src/",
     "dev": "nodemon src/server.ts",
     "stg": "echo \"Error: no test specified\" && exit 1",
-    "prod": "echo \"Error: no test specified\" && exit 1"
+    "prod": "echo \"Error: no test specified\" && exit 1",
+    "prisma-generate": "npx prisma generate --schema prisma/schema.prisma",
+    "prisma-db-push": "npx prisma db push --schema prisma/schema.prisma"
   },
   "keywords": [],
   "author": "",

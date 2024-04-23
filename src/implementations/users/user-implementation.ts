@@ -1,4 +1,6 @@
+import { User } from "@prisma/client";
+
 export interface iUserImplementation {
-  findByEmail(email: string): Promise<any>;
-  create(user: any): Promise<any>;
+  create(user: any): Promise<User>;
+  findByEmail(email: string): Promise<User>;
 }

@@ -1,10 +1,13 @@
-import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
 import { Request, Response } from "express";
 import { MysqlUserRepository } from "../../repositories/mysql/users/mysql-user-repository";
+import { AuthenticationService } from "./authentication-service";
 
 export class AuthenticationController {
-  constructor(private readonly userRepository: MysqlUserRepository) {}
+  constructor(
+    private readonly userRepository: MysqlUserRepository,
+    private readonly jwtService: AuthenticationService
+  ) {}
 
   async signIn(request: Request, response: Response) {
     try {
@@ -12,9 +15,7 @@ export class AuthenticationController {
 
       const user = await this.userRepository.findByEmail(email);
 
-      if (!user) {
-        throw new Error("Email não encontrado ou está errado.");
-      }
+      if (!user) throw new Error("Email não encontrado ou está errado.");
 
       const verifyPass = await bcrypt.compare(password, user.password);
 
@@ -22,13 +23,10 @@ export class AuthenticationController {
         throw new Error("Senha está incorreta.");
       }
 
-      const token = jwt.sign(
-        { id: user.id, typeUser: user.typeUser },
-        process.env.JWT_USER_PASS || "",
-        {
-          expiresIn: "8h",
-        }
-      );
+      const token = await this.jwtService.generateToken({
+        id: user.id,
+        email: user.email,
+      });
 
       let { password: _, ...userLogin } = user;
 

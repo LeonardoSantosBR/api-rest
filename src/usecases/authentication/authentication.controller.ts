@@ -1,6 +1,6 @@
 import bcrypt from "bcrypt";
 import { Request, Response } from "express";
-import { MysqlUserRepository } from "../../repositories/mysql/users/mysql-user-repository";
+import { MysqlUserRepository } from "../../repositories/users/mysql-user-repository";
 import { AuthenticationService } from "./authentication-service";
 
 export class AuthenticationController {

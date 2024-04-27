@@ -1,9 +1,8 @@
 export interface UserDto {
-    id?: string;
-    email: string;
-    typeUser: string;
-    name: string;
-    password: string;
-    confirmPassword: string;
-  }
-  
+  id: number;
+  idPlan: string;
+  email: string;
+  cpf: string;
+  name: string;
+  password: string;
+}

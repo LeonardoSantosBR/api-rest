@@ -1,5 +1,5 @@
 import { PrismaClient } from "@prisma/client";
-import { MysqlUserRepository } from "../../repositories/mysql/users/mysql-user-repository";
+import { MysqlUserRepository } from "../../repositories/users/mysql-user-repository";
 import { AuthenticationController } from "./authentication.controller";
 import { AuthenticationService } from "./authentication-service";
 

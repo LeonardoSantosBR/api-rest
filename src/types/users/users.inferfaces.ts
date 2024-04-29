@@ -1,7 +1,7 @@
 import { Prisma } from "@prisma/client";
 
 export interface createParams {
-  data: Prisma.UserUncheckedCreateInput;
+  data: Prisma.UserCreateInput;
   include?: Prisma.UserInclude;
 }
 

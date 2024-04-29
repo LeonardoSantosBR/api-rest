@@ -1,4 +1,5 @@
 import { User } from "@prisma/client";
+
 import {
   createParams,
   findAllParams,
@@ -11,11 +12,11 @@ export interface iUserImplementation {
 
   findAll(params: findAllParams): Promise<User[]>;
 
-  findOne(params: findOneParams): Promise<User>;
+  findOne(params: findOneParams): Promise<User | null>;
 
   findByEmail(params: findOneParams): Promise<User>;
 
-  update(params: updateOrDeleteParams): boolean;
+  update(params: updateOrDeleteParams): Promise<boolean>;
 
-  delete(params: updateOrDeleteParams): boolean;
+  delete(params: updateOrDeleteParams): Promise<boolean>;
 }

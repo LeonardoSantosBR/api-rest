@@ -12,7 +12,7 @@ export class MysqlUserRepository implements iUserImplementation {
   constructor(private readonly prisma: PrismaClient) {}
 
   async create(data: createParams): Promise<User> {
-    const newUser = await this.prisma.user.create({ data: data });
+    const newUser = await this.prisma.user.create(data);
     return newUser;
   }
 
@@ -21,16 +21,13 @@ export class MysqlUserRepository implements iUserImplementation {
     return query;
   }
 
-  async findOne(params: findOneParams): Promise<User> {
+  async findOne(params: findOneParams): Promise<User | null> {
     const query = await this.prisma.user.findFirst(params);
-    return query;
+    return query
   }
 
   async findByEmail(params: findOneParams): Promise<any> {
-    const findUser = await this.prisma.user.findFirst({
-      where: params,
-    });
-
+    const findUser = await this.prisma.user.findFirst(params);
     return findUser;
   }
 

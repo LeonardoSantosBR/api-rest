@@ -25,6 +25,3 @@ export interface updateOrDeleteParams {
   data: Prisma.UserUpdateInput;
 }
 
-export interface countParams {
-  count: Prisma.UserCountArgs
-}

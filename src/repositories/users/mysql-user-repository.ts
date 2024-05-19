@@ -6,7 +6,6 @@ import {
   findAllParams,
   findOneParams,
   updateOrDeleteParams,
-  countParams,
 } from "../../types/users/users.inferfaces";
 
 export class MysqlUserRepository implements iUserImplementation {

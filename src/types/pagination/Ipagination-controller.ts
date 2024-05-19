@@ -1,4 +1,4 @@
-export interface ifilterAll {
+export interface IpaginationController {
     page?: number,
     limit?: number,
     where?: any,

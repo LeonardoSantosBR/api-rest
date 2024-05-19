@@ -5,4 +5,5 @@ export interface UserDto {
   cpf: string;
   name: string;
   password: string;
+  plan: number;
 }

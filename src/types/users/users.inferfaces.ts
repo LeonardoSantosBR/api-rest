@@ -24,3 +24,7 @@ export interface updateOrDeleteParams {
   where: Prisma.UserWhereUniqueInput;
   data: Prisma.UserUpdateInput;
 }
+
+export interface countParams {
+  count: Prisma.UserCountArgs
+}

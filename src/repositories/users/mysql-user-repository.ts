@@ -6,6 +6,7 @@ import {
   findAllParams,
   findOneParams,
   updateOrDeleteParams,
+  countParams,
 } from "../../types/users/users.inferfaces";
 
 export class MysqlUserRepository implements iUserImplementation {
@@ -23,7 +24,7 @@ export class MysqlUserRepository implements iUserImplementation {
 
   async findOne(params: findOneParams): Promise<User | null> {
     const query = await this.prisma.user.findFirst(params);
-    return query
+    return query;
   }
 
   async findByEmail(params: findOneParams): Promise<any> {

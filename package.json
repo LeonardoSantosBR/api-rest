@@ -9,7 +9,8 @@
     "stg": "echo \"Error: no test specified\" && exit 1",
     "prod": "echo \"Error: no test specified\" && exit 1",
     "prisma-generate": "npx prisma generate --schema prisma/schema.prisma",
-    "prisma-db-push": "npx prisma db push --schema prisma/schema.prisma"
+    "prisma-db-push": "npx prisma db push --schema prisma/schema.prisma",
+    "seed-plan-mysql": "npx ts-node prisma/seeders/plans.ts"
   },
   "keywords": [],
   "author": "",

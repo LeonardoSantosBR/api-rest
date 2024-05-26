@@ -1,7 +1,7 @@
 import Joi from "joi";
 
 const CreateUserSchema = Joi.object({
-  idPlan: Joi.string().required().messages({
+  idPlan: Joi.number().required().messages({
     "any.required": "É necessário enviar o plano.",
   }),
   email: Joi.string().email().required().messages({

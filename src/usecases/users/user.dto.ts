@@ -1,9 +1,8 @@
 export interface UserDto {
   id: number;
-  idPlan: string;
+  idPlan: number;
   email: string;
   cpf: string;
   name: string;
   password: string;
-  plan: number;
 }

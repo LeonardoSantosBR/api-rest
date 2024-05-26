@@ -25,7 +25,7 @@ export class UserController {
 
       const data = await this.userService.create(body);
 
-      return data;
+      return response.status(200).json(data);
     } catch (error: any) {
       return response.status(500).json({
         message: error.message || "unexpected error",

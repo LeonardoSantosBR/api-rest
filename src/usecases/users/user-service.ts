@@ -8,17 +8,8 @@ export class UserService {
   constructor(private readonly userRepository: MysqlUserRepository) {}
 
   async create(data: UserDto) {
-    const { plan, ...rest } = data;
-
     const newUser = await this.userRepository.create({
-      data: {
-        ...rest,
-        plan: {
-          connect: {
-            id: plan,
-          },
-        },
-      },
+      data: data,
     });
 
     return newUser;
@@ -80,20 +71,11 @@ export class UserService {
   }
 
   async update(id: number, data: UserDto) {
-    const { plan, ...rest } = data;
-
     await this.userRepository.update({
       where: {
         id: id,
       },
-      data: {
-        ...rest,
-        plan: {
-          connect: {
-            id: plan,
-          },
-        },
-      },
+      data: data,
     });
   }
 

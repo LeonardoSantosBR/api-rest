@@ -10,7 +10,7 @@ datasource db {
 //relacao um para um user - userplan
 model User {
   id        Int       @id @default(autoincrement())
-  idPlan    Int       @unique
+  idPlan    Int
   email     String    @unique
   cpf       String
   name      String
@@ -18,7 +18,7 @@ model User {
   createdAt DateTime? @default(now())
   updatedAt DateTime?
   deletedAt DateTime?
-  plan      Plan      @relation(fields: [idPlan], references: [id])
+  plan      Plan[]
 }
 
 model Plan {
@@ -27,5 +27,6 @@ model Plan {
   createdAt DateTime? @default(now())
   updatedAt DateTime?
   deletedAt DateTime?
-  User      User?
+  userId    Int?
+  User      User?     @relation(fields: [userId], references: [id])
 }
